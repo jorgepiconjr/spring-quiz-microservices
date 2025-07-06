@@ -1,4 +1,4 @@
-# Microservices Java Spring Quiz App
+# Microservices Java Spring
 
 A distributed Quiz application built with Java Spring Boot microservices. Users can browse a catalog of quizzes, answer questions, receive grades, and even create their own quizzes — all through a resilient, Eureka‑backed microservices architecture.
 
