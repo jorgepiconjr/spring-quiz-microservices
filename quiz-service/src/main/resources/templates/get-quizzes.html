@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/home.css}" />
+    <title>Quiz Catalogle</title>
+</head>
+<body>
+<h1>Quiz Catalog</h1>
+<h3>Available quizzes here</h3>
+<div class="cards-catalog">
+    <div class="card" th:each="quiz : ${quizzes}" style="width: 450px">
+        <h2 th:text="${quiz.title}">Quiz Title</h2>
+        <ol>
+            <li th:each="question : ${quizQuestions[quiz.getId()]}" th:text="${question.questionTitle}">
+                Question text
+            </li>
+        </ol>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/home.css}" />
+    <title>Add Quiz</title>
+</head>
+<body>
+<h1>Create New Quiz</h1>
+<h3>Please fill out the following information </h3>
+<form action="#" th:action="@{/createQuiz}" method="post">
+    <div class="cards-home" th:if="${buttonEnable}">
+        <div class="card">
+            <h4>Quiz name</h4>
+            <input type="text" name="title" placeholder="quiz title"/>
+        </div>
+        <div class="card">
+            <h4>Amount of questions</h4>
+            <input type="number" name="numQ" placeholder="amount"/>
+        </div>
+        <div class="card">
+            <h4>Quiz category</h4>
+            <input type="text" name="category" placeholder="quiz category"/>
+        </div>
+    </div>
+    <button type="submit" th:if="${buttonEnable}" class="card" id="answer-button" style=" width: 100px ; height: 100px">Create Quiz</button>
+</form>
+<h2 th:if="${message_title}" style="background-color: forestgreen">Quiz successfully created</h2><br>
+<h4 th:if="${message_title}" th:text="'Title: ' + ${message_title}" style="background-color: white"></h4>
+<h4 th:if="${message_numQ}" th:text="'Amount of Questions: ' + ${message_numQ}" style="background-color: white"></h4>
+<h4 th:if="${message_category}" th:text="'Category: ' + ${message_category}" style="background-color: white"></h4>
+</body>
+</html>

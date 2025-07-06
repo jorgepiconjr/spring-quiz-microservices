@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/home.css}" />
+    <title>Add Response</title>
+</head>
+<body>
+<h1 th:text="'Quiz #' + ${quiz.id}">Quiz #</h1>
+<h1 th:text="'Quiz Title: ' + ${quiz.title}">Quiz Title</h1>
+<form action="#" th:action="@{/getQuizResponse/{quizId}/submit(quizId=${quiz.id})}" method="post">
+    <div class="cards-catalog">
+        <div th:each="QuestionWrapper: ${quizQuestions}" class="card">
+            <h4 th:text="${QuestionWrapper.questionTitle}">Questions Tile</h4>
+            <input type="text" th:name="${QuestionWrapper.id}" placeholder="Your answer"/>
+            <br/><br/>
+        </div>
+    </div>
+    <br/><br/>
+    <button th:if="${correctAnswers == null}" type="submit" class="card" id="answer-button" style="padding: 30px;">Submit Answers</button>
+</form>
+<br/><br/>
+<h1 th:if="${correctAnswers > 0}" th:text="'Correct Answers: '+ ${correctAnswers}" style="background-color: forestgreen"></h1>
+<h1 th:if="${correctAnswers == 0}" th:text="'Correct Answers: 0'" style="background-color: red"></h1>
+</body>
+</html>

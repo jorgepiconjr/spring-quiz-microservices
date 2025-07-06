@@ -1,0 +1,11 @@
+card{
+    width: 300px;
+}
+
+.card ol {
+    padding: 15px;
+    color: coral;
+}
+.card li {
+    margin: 5px;
+}

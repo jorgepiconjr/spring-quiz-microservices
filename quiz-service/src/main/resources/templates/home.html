@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/home.css}" />
+    <title>Home</title>
+</head>
+<body>
+    <h1>My Quiz App!</h1>
+    <h3>What would you like to do?</h3>
+    <div class="cards-home">
+        <div class="card">
+            <h4>Execute a Quiz</h4>
+            <form th:action="@{/getQuizResponse}" method="get">
+                <button type="submit">Get Quiz</button>
+            </form>
+        </div>
+        <div class="card">
+            <h4>Quiz Catalog</h4>
+            <form th:action="@{/getQuizzes}" method="get">
+                <button type="submit">See Catalog</button>
+            </form>
+        </div>
+        <div class="card">
+            <h4>Create Quiz</h4>
+            <form th:action="@{/create}" method="get">
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
