@@ -2,15 +2,13 @@
 
 A distributed Quiz application built with Java Spring Boot microservices, PostgreSQL data base and HTML. Users can browse a catalog of quizzes, answer questions, receive grades, and even create their own quizzes — all through a resilient, Eureka‑backed microservices architecture.
 
----
-
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+- [Technologies Used](#technologies-used)
 - [Architecture Overview](#architecture-overview)
 - [Microservice Details](#microservice-details)
 - [Key Features](#key-features)
-- [Technologies Used](#technologies-used)
 - [Screenshots](#screenshots)
 
 ---
@@ -19,7 +17,18 @@ A distributed Quiz application built with Java Spring Boot microservices, Postgr
 
 This project demonstrates a Spring Boot microservices ecosystem powering a dynamic Quiz App. It integrates multiple independent services—questions service, quiz service, service registry, and API gateway—to handle all quiz operations, data persistence in two postgreSQL databases “Questions DB” and “Quizzes DB”, and inter‑service communication.
 
----
+## Technologies Used
+- Java
+- Spring Boot
+- Spring Data JPA
+- Spring Cloud Netflix Eureka (Server/Client)
+- Spring Cloud OpenFeign
+- Spring Cloud Gateway
+- Thymeleaf for server‑side HTML rendering
+- HTML & CSS
+- Apache Tomcat
+- Data base: PostgreSQL
+
 
 ## Architecture Overview
 ```plaintext
@@ -89,18 +98,6 @@ This project demonstrates a Spring Boot microservices ecosystem powering a dynam
 
 4. Resilient Microservices
 - Discovery via Eureka; centralized routing via API Gateway.
-
-## Technologies Used
-- Java
-- Spring Boot
-- Spring Data JPA
-- Spring Cloud Netflix Eureka (Server/Client)
-- Spring Cloud OpenFeign
-- Spring Cloud Gateway
-- Thymeleaf for server‑side HTML rendering
-- HTML & CSS
-- Apache Tomcat
-- Data base: PostgreSQL
 
 ## Screenshots
 
