@@ -1,6 +1,6 @@
 # Microservices Java Spring - _Full Stack Project_
 
-A distributed Quiz application built with Java Spring Boot microservices, PostgreSQL data base and HTML. Users can browse a catalog of quizzes, answer questions, receive grades, and even create their own quizzes — all through a resilient, Eureka‑backed microservices architecture.
+A distributed Quiz application built with Java Spring Boot microservices, PostgreSQL data base and HTML. Users can browse a catalog of quizzes, answer questions, receive grades, and even create their own quizzes. Implementation of Create, read, update and delete (CRUD) — all through a resilient, Eureka‑backed microservices architecture.
 
 ## Table of Contents
 
