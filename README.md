@@ -68,12 +68,12 @@ This project demonstrates a Spring Boot microservices ecosystem powering a dynam
 
 1. Question-service
 
-- Manages all quiz questions: CRUD operations, categories, difficulty levels, possible answers, correct answer.
+- Manages all quiz questions: CREATE, READ, UPDATE, DELETE (CRUD) operations for **questions**, categories, difficulty levels, possible answers, correct answer.
 - Persists data to a PostgreSQL “questions” database.
 
 2. Quiz-service
 
-- Orchestrates quizzes: creates new quizzes, retrieves quiz metadata and questions via Feign client from question-service.
+- Orchestrates quizzes: CREATE, READ, UPDATE, DELETE (CRUD) operations for **quizzes**, creates new quizzes, retrieves quiz metadata and questions via Feign client from question-service.
 - Provides quiz catalog and grading logic.
 
 3. service-registry
@@ -88,10 +88,10 @@ This project demonstrates a Spring Boot microservices ecosystem powering a dynam
 ## Key Features
 
 1. Quiz Catalog
-- Browse all available quizzes along with metadata.
+- Browse all available quizzes along with metadata (respective questions).
 
 2. Dynamic Quiz Taking
-- Fetch quizzes, answer questions, and receive instant grading.
+- Fetch quizzes, load and answer questions, and receive instant grading.
 
 3. Quiz Creation
 - Build and persist your own quizzes (questions, options, correct answers).
