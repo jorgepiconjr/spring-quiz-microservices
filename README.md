@@ -9,6 +9,7 @@ A distributed Quiz application built with Java Spring Boot microservices, Postgr
 - [Architecture Overview](#architecture-overview)
 - [Microservice Details](#microservice-details)
 - [Key Features](#key-features)
+- [Example: _Flow of a Typical Request (e.g., Creating a Quiz)_](#example:-_Flow-of-a-Typical-Request-(e.g.,-Creating-a-Quiz)_)
 - [Screenshots](#screenshots)
 
 ---
@@ -98,6 +99,18 @@ This project demonstrates a Spring Boot microservices ecosystem powering a dynam
 
 4. Resilient Microservices
 - Discovery via Eureka; centralized routing via API Gateway.
+
+## Example: _Flow of a Typical Request (e.g., Creating a Quiz)_
+
+1.  A user (via an app) sends a request to create a quiz to the **API-GATEWAY**.
+2.  The **API-GATEWAY** sees the request's URL (e.g., `/quiz/create`) and knows it must forward it to the **QUIZ-SERVICE**.
+3.  The **QUIZ-SERVICE** receives the request. To create the quiz, it needs 10 questions from the "Java" category.
+4.  The **QUIZ-SERVICE** asks the **EUREKA-SERVER**: "Where is the **QUESTION-SERVICE**?"
+5.  **Eureka** responds with the address.
+6.  The **QUIZ-SERVICE** makes a call (using OpenFeign) to the **QUESTION-SERVICE** to request the questions.
+7.  The **QUESTION-SERVICE** queries its database (PostgreSQL), retrieves the questions, and returns them to the **QUIZ-SERVICE**.
+8.  The **QUIZ-SERVICE** creates the quiz with the received questions and returns the final response to the **API-GATEWAY**.
+9.  The **API-GATEWAY** finally sends the response back to the user.
 
 ## Screenshots
 
